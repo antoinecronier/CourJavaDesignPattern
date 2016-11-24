@@ -11,5 +11,8 @@ public class AdapterPatternDemo {
 
 		MediaPlayer player = new MediaAdapter("mp4");
 		player.play("mp4", "test.mp4");
+
+		MediaPlayer player1 = new AudioPlayer();
+		player1.play("mp4", "test1.mp4");
 	}
 }
