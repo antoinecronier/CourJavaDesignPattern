@@ -2,7 +2,7 @@ package abstractfactory;
 
 public class ShapeFactory extends AbstractFactory {
 
-	public static String SHAPE = "SHAPE";
+	public static final String SHAPE = "SHAPE";
 
 	@Override
 	public Shape getShape(String shapeType) {
@@ -26,6 +26,25 @@ public class ShapeFactory extends AbstractFactory {
 
 	@Override
 	Color getColor(String color) {
+		return null;
+	}
+
+	@Override
+	Item getItem(String item) {
+		if (item == null) {
+			return null;
+		}
+
+		if (item.equalsIgnoreCase("CIRCLE")) {
+			return new Circle();
+
+		} else if (item.equalsIgnoreCase("RECTANGLE")) {
+			return new Rectangle();
+
+		} else if (item.equalsIgnoreCase("SQUARE")) {
+			return new Square();
+		}
+
 		return null;
 	}
 }
